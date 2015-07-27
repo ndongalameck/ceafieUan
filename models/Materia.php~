@@ -1,0 +1,60 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Materia
+ *
+ * @ORM\Table(name="materia", uniqueConstraints={@ORM\UniqueConstraint(name="nome_UNIQUE", columns={"nome"})}, indexes={@ORM\Index(name="fk_materia_curso1_idx", columns={"curso_id"}), @ORM\Index(name="fk_materia_modulo1_idx", columns={"modulo_id"}), @ORM\Index(name="fk_materia_docente1_idx", columns={"docente_id"})})
+ * @ORM\Entity
+ */
+class Materia
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="string", length=45, nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="curso_id", type="integer", nullable=false)
+     */
+    private $cursoId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modulo_id", type="integer", nullable=false)
+     */
+    private $moduloId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="docente_id", type="integer", nullable=false)
+     */
+    private $docenteId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=200, nullable=false)
+     */
+    private $nome;
+
+
+}

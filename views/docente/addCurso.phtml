@@ -1,0 +1,79 @@
+
+<?php echo $this->menu; ?>
+<div class="col-12 pull-right">
+
+
+       <div class="col-12 pull-left">
+                <h3>Acesso Rapido</h3>
+                <div class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "index/" ?>"><span style="font-size: 14px; color: black;">Ver Docentes</span></a></li>
+                        <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "editar/" ?>"><span style="font-size: 14px; color: black;">Editar</span></a></li>
+                        <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "remover/" ?>"><span style="font-size: 14px; color: black;">Apagar</span></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+</div>
+<div class="span10 " id="content" style="margin-left: 420px; ">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <br />
+        <div class="block">
+
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Adicionar em novo curso</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="" id="adicionar" class="form-horizontal" method="POST" enctype="multipart/form-data">
+
+                        <legend>Curso a lecionar</legend>
+                        <div class="control-group">
+                            <label class="control-label">Curso<span class="required">*</span></label>
+                            <div class="controls">
+                                <select class="span6 m-wrap" id="curso" name="curso">
+                                    <option value="">Selecciona um curso</option>
+                                </select>
+
+
+                            </div>
+                        </div>
+                        <div class="carregando"></div>
+                        <div class="control-group">
+                            <label class="control-label">Modúlo<span class="required">*</span></label>
+                            <div class="controls">
+                                <select class="span6 m-wrap" id="modulo" name="modulo" >
+
+                                </select>
+
+
+                            </div>
+                        </div>
+
+                     
+
+                        <input name="enviar" type="hidden" value="1"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="adicionar">Salvar Dados</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+
+
+                    </form>
+
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+

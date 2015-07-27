@@ -1,0 +1,62 @@
+<?php echo $this->menu; ?>
+
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <div class="navbar">
+        <h3></h3>
+        <h3></h3>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "adicionar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Novo</span></a></li>
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "editar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Editar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "remover/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Apagar</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+
+<div  id="content" style="margin-left: 120px;">
+    <table  class="table table-striped table-bordered" id="tabela">   
+        <thead>
+            <tr class="odd gradeA">
+
+                <th>CURSO</th> 
+                <th>MODÚLO</th>
+                <th>DOCENTE</th>
+                <th>LOCAL</th>
+                <th>INICIO</th>
+                <th>TERMINA</th>
+                <th>HORAS</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <?php if (isset($this->dados) && !empty($this->dados)): ?>
+                <?php foreach ($this->dados as $dados): ?>
+                    <tr>
+                        <td><?php print $dados->getCurso()->getNome(); ?></td>
+                        <td><?php print $dados->getModulo()->getNome(); ?></td>
+                        <td><?php print $dados->getDocente()->getPessoa()->getNome(); ?></td>
+                        <td><?php print $dados->getLocal(); ?></td>
+                        <td><?php print date("d/m/Y", strtotime($dados->getData())); ?></td>
+                        <td><?php print date("d/m/Y", strtotime($dados->getDatafinal())); ?></td>
+                        <td><?php print $dados->getHoras(); ?></td>
+                        <td><a target="__BLANK" href="<?php echo URL . "programa" . DS1 . "gerar/" . $dados->getId(); ?>"><i class="icon icon-print"></i></a></td>
+
+                    </tr>
+
+                    <?php
+                endforeach;
+            endif;
+            ?>
+
+        </tbody>
+    </table>
+
+</div>
+
+

@@ -1,0 +1,35 @@
+<?php echo $this->menu; ?>
+
+<table  class="table table-striped table-bordered" style="margin-top: 50px;">   
+    <thead>
+        <tr>
+
+            <th>CURSO</th>
+            <th>MODÚLO</th>
+            <th>NOTA</th>
+            <th>DATA</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <?php if (isset($this->dados) && !empty($this->dados)): ?>
+            <?php foreach ($this->dados as $dados): ?>
+                <tr>
+                    <td><?php print $dados->getModulo()->getCurso()->getNome(); ?></td>
+                    <td><?php print $dados->getModulo()->getNome(); ?></td>
+                    <td><?php print $dados->getNota(); ?></td>
+                    <td><?php print date("d/m/Y",  strtotime($dados->getData())); ?></td>
+                </tr>
+
+                <?php
+            endforeach;
+        endif;
+        ?>
+
+    </tbody>
+</table>
+
+
+

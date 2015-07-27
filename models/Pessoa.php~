@@ -1,0 +1,81 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pessoa
+ *
+ * @ORM\Table(name="pessoa", uniqueConstraints={@ORM\UniqueConstraint(name="telefone_UNIQUE", columns={"telefone"}), @ORM\UniqueConstraint(name="bi_UNIQUE", columns={"bi"}), @ORM\UniqueConstraint(name="unique_index", columns={"bi", "documento", "email"}), @ORM\UniqueConstraint(name="email_UNIQUE", columns={"email"})})
+ * @ORM\Entity
+ */
+class Pessoa
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=45, nullable=false)
+     */
+    private $nome;
+
+    /**
+     * @var simplearray
+     *
+     * @ORM\Column(name="genero", type="simplearray", nullable=false)
+     */
+    private $genero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nacionalidade", type="string", length=45, nullable=false)
+     */
+    private $nacionalidade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefone", type="string", length=45, nullable=false)
+     */
+    private $telefone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagem", type="string", length=5000, nullable=true)
+     */
+    private $imagem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bi", type="string", length=45, nullable=false)
+     */
+    private $bi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="documento", type="string", length=45, nullable=true)
+     */
+    private $documento;
+
+
+}

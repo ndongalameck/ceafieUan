@@ -1,0 +1,149 @@
+<?php
+echo $this->menu;
+
+function selected($value, $selected) {
+    return $value == $selected ? ' selected="selected"' : '';
+}
+?>
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <h3></h3>
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "index/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">lista</span></a></li>
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "editar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Editar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "programa" . DS1 . "remover/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Apagar</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+<div class="span9 " id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+
+            <div class="navbar navbar-inner block-header" style="margin-top: 20px;">
+                <div class="muted pull-right" style="padding: 10px; float: left; color: blue;">Dados do Programa</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>programa/adicionar" id="adicionar" class="form-horizontal" method="POST" >
+                        <fieldset>
+                            <legend class="text-info text-center">Adicionar Novo Programa de Formação</legend>
+
+                            <div class="control-group">
+                                <label class="control-label">Curso<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap " id="curso" name="curso">
+                                        <option value="">-Selecciona um curso-</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Modúlo<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" id="modulo" name="modulo">
+                                        <option value="">-Seleciona um modulo-</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Docente<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" id="docente" name="docente">
+                                        <option value="">-Seleciona o Docente-</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label">Local<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="local" data-required="1" class="span6 m-wrap" value=" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['local'];
+                                    endif;
+                                    ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Inicio<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="inicio" data-provide="datepicker" name="inicio" data-required="1" class="span6 m-wrap"
+                                           value=" <?php
+                                           if (isset($this->dados) && !empty($this->dados)): echo $this->dados['inicio'];
+                                           endif;
+                                           ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Termino<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="termino" name="termino" data-required="1" class="span6 m-wrap" data-provide="datepicker"
+                                           value=" <?php
+                                           if (isset($this->dados) && !empty($this->dados)): echo $this->dados['termino'];
+                                           endif;
+                                           ?>"/>
+
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Horas<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap"  name="hora">
+                                        <option value=""  >-Seleciona-</option>
+                                        <option value="20h" <?php
+                                        if (isset($this->dados) && !empty($this->dados)): echo selected($this->dados['hora'], "20h");
+                                        endif;
+                                        ?>>-20h-</option>
+                                        <option value="40h" <?php
+                                        if (isset($this->dados) && !empty($this->dados)): echo selected($this->dados['hora'], "40h");
+                                        endif;
+                                        ?>>-40h-</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+
+
+                        </fieldset>
+
+                        <input name="enviar" type="hidden" value="1"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="adicionar">Adicionar</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+
+

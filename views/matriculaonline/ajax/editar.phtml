@@ -1,0 +1,70 @@
+
+
+<table  class="table table-striped table-bordered" id="tabela" >   
+    <thead>
+
+        <tr class="odd gradeA">
+
+            <th>Nª BI</th> 
+            <th>Nome</th>
+            <th>Ano de Matricula</th>
+            <th>Editar</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <?php if (isset($this->dados) && !empty($this->dados)): ?>
+            <?php foreach ($this->dados as $dados): ?>
+                <tr> 
+                    <td><?php print $dados['bi']; ?></td>
+                    <td><a href="#" onclick="modal(<?php echo $dados['aluno'];?>)"><?php print $dados['nome']; ?></a></td>
+                    <td><?php print date("Y", strtotime($dados['data'])); ?></td>
+                    <td><a href="<?php echo URL . "matricula/editarDados/" . $dados['aluno']."/".$dados['pessoa'] ?>" id="editar1" rel="<?php echo $dados['aluno']; ?>"><i class="icon-pencil"></i></a></td>
+
+
+                </tr>
+
+                <?php
+            endforeach;
+            ?>
+
+
+            <?php
+        endif;
+        ?>
+
+    </tbody>
+</table>
+
+
+<div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Informação</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Informação do Aluno</h3>
+                    <div>
+                        <h4>Modulos Inscritos: </h4>
+                        <div id="conteudo"></div>
+                    </div>                    
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal" href="<?php echo URL . "docente"; ?>" data-remote="<?php echo URL . "docente"; ?>" rel="0" id="fechar">Fechar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+

@@ -1,0 +1,39 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Modulo
+ *
+ * @ORM\Table(name="modulo", uniqueConstraints={@ORM\UniqueConstraint(name="nome_UNIQUE", columns={"nome"})}, indexes={@ORM\Index(name="fk_modulo_curso1_idx", columns={"curso_id"})})
+ * @ORM\Entity
+ */
+class Modulo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=200, nullable=false)
+     */
+    private $nome;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="curso_id", type="integer", nullable=false)
+     */
+    private $cursoId;
+
+
+}

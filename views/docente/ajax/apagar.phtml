@@ -1,0 +1,35 @@
+
+<table  class="table table-striped table-bordered" id="tabela">   
+    <thead>
+        <tr class="odd gradeA">
+
+
+            <th>Nª BI</th> 
+            <th>Nome</th>
+            <th>Grau</th>
+            <th>Modulo</th>
+            <th>Editar</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <?php if (isset($this->dados) && !empty($this->dados)): ?>
+            <?php foreach ($this->dados as $dados): ?>
+                <tr>
+                    <td><?php print $dados['bi']; ?></td>
+                    <td><a href="#" onclick="modal(<?php echo $dados['docente']; ?>);"><?php print $dados['nome']; ?></a></td>
+                    <td><?php print $dados['grau']; ?></td>
+                    <td><?php print $dados['nome_modulo']; ?></td>
+                    <td><a href="#" id="remover" rel="<?php echo URL . "docente" . DS1 . "remover/" . $dados['pessoa']; ?>"><i class="icon-trash"></i></a></td>
+                </tr>
+
+                <?php
+            endforeach;
+        endif;
+        ?>
+
+    </tbody>
+</table>
+

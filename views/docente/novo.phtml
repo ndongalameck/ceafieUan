@@ -1,0 +1,213 @@
+<?php echo $this->menu; ?>
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <div class="navbar">
+        <h3></h3>
+        <h3></h3>
+        <ul class="nav navbar-nav">
+            <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "index/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #ffffff;">Ver</span></a></li>
+            <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "editar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #ffffff;">Editar</span></a></li>
+            <li class="active click"><a href="<?php echo URL . "docente" . DS1 . "remover/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #ffffff;">Apagar</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div class="span10 " id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+
+            <div class="navbar navbar-inner block-header" style="margin-top: 20px;">
+                <div class="muted pull-right" style="padding: 10px; float: left; color: blue;">Dados do Docente</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>docente/adicionar" id="adicionar" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <legend>Dados Pessoas</legend>
+                            <div class="control-group">
+                                <label class="control-label">Nome<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="nome" data-required="1" class="span6 m-wrap" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['nome'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Apelido<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="apelido" data-required="1" class="span6 m-wrap" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['apelido'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Genero<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" name="genero">
+                                        <option value="">-Seleciona um genero-</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>                                    
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Nª Bi<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="bi" type="text" class="span6 m-wrap" maxlength="14" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['bi'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Nacionalidade<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="nacionalidade" id="telefone" type="text" class="span6 m-wrap" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['nacionalidade'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Telefone<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="telefone" type="tel" class="span6 m-wrap" maxlength="9" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['telefone'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Email<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="email"  class="span6 m-wrap" type="email" <?php
+                                    if (isset($this->dados) && !empty($this->dados)): echo $this->dados['email'];
+                                    endif;
+                                    ?>/>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label">Grau<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" name="grau">
+                                        <option value="000">-Seleciona um grau-</option>
+                                        <option value="Licenciado">Licenciado</option>
+                                        <option value="Mestre">Mestre</option>
+                                        <option value="Doctor">Doctor</option>
+                                    </select>                                    
+                                </div>
+                            </div>
+
+                            <fieldset>
+                                <legend>Curso a Lecionar</legend>
+
+                                <select  id="dados" name="modulo[]" multiple="multiple">
+                                    <!--                                    <optgroup label="Group 1">
+                                                                            <option value="1">1</option>
+                                                                            ...
+                                                                        </optgroup>
+                                                                        ...
+                                                                        <optgroup label="Group 3">
+                                                                            <option value="15">15</option>
+                                                                        </optgroup>-->
+                                </select>
+
+
+                                <!--                                <div class="control-group">
+                                                                    <label class="control-label">Curso<span class="required">*</span></label>
+                                                                    <div class="controls">
+                                                                        <select class="span6 m-wrap" id="curso" name="curso">
+                                                                            <option value=""></option>
+                                                                        </select>
+                                
+                                
+                                                                    </div>
+                                                                </div>
+                                                                <div class="carregando"></div>
+                                                                <div class="control-group">
+                                                                    <label class="control-label">Modúlo<span class="required">*</span></label>
+                                                                    <div class="controls">
+                                                                        <select class="span6 m-wrap" id="modulo" name="modulo[]" multiple="multiple">
+                                                                            
+                                                                        </select>
+                                                                        <button id="example21-toggle" class="btn btn-primary">Seleccioanar Todos</button>
+                                
+                                                                    </div>
+                                                                </div>-->
+                            </fieldset>
+
+
+
+                        </fieldset>
+                        <input name="enviar" type="hidden" value="1"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="adicionar">Salvar Dados</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+
+                        <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+<!-- /block -->
+</div>
+<!-- /validation -->
+
+</div>
+</div>

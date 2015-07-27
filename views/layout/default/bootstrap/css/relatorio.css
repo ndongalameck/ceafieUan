@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/Ago/2014, 10:29:08
+    Author     : sam
+*/
+
+#quadro{
+    
+background-color: #ffffff;
+border: 2px solid #999999;
+-moz-border-radius: 41px;
+-webkit-border-radius: 31px;
+border-radius: 1px;
+width: 150%;
+height: 20%
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+
+}
+
+h3{
+    text-align: center;
+}
+h4{ margin: 40px;}
+p{ margin: 50px; font-size: 14px; line-height: 1%;}
+
+#texto{
+     line-height: 25px;
+    margin: 0px 0px 0px 10px;
+    
+}
+
+.texto1{
+        text-align: center;
+    
+}
+

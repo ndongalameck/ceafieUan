@@ -1,0 +1,34 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DocentModulo
+ *
+ * @ORM\Table(name="docent_modulo", indexes={@ORM\Index(name="fk_docente_has_modulo_modulo1_idx", columns={"modulo_id"}), @ORM\Index(name="fk_docente_has_modulo_docente1_idx", columns={"docente_id"})})
+ * @ORM\Entity
+ */
+class DocentModulo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="docente_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $docenteId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modulo_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $moduloId;
+
+
+}

@@ -1,0 +1,123 @@
+<?php echo $this->menu; ?>
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+
+
+    <div class="navbar">
+        <h3></h3>
+        <h3></h3>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "matricula" . DS1 . "adicionar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color:  #ffffff;" >Cadastrar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "matricula" . DS1 . "editar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #ffffff;">Editar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "matricula" . DS1 . "remover/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #ffffff;">Apagar</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+<div  id="content" style="margin-left: 80px; ">
+    <div class="row-fluid">
+
+        <div class="block">
+
+
+
+
+
+            <div class="span6 " id="content" style="margin-left: 190px; margin-top: 50px;">
+                <!-- validation -->
+
+                <div class="row-fluid">
+
+                    <!-- block -->
+                    <div class="block">
+
+
+
+
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                                <!-- BEGIN FORM-->
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <legend class="text-info text-center">Selecciona os dados a pesquisar</legend>
+
+
+                                        <div class="control-group">
+                                            <label class="control-label">Ano<span class="required">*</span></label>
+                                            <div class="controls">
+                                                <input type="text" name="ano" data-required="1" class="span6 m-wrap" id="ano"/>
+
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">Curso<span class="required">*</span></label>
+                                            <div class="controls">
+                                                <select class="span6 m-wrap " id="curso" name="curso">
+                                                    <option value="000">-Selecciona um curso-</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">Modúlo<span class="required">*</span></label>
+                                            <div class="controls">
+                                                <select class="span6 m-wrap" id="modulo1" name="modulo1">
+                                                    <option value="000">-Seleciona um modulo-</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <input name="enviar" type="hidden" value="1"/>
+                                    <div class="form-actions">
+                                        <input type="button" name="btnPesquisar" value="Pesquisar" class="btn btn-success" id="buscar"  onclick="getDados('buscar');"/>
+                                        <input type="button" name="btnPesquisar" value="Carregar Todos" class="btn btn-primary" id="buscar"  onclick="getTodos('buscar');" />
+                                        <input type="hidden" value="<?php echo URL; ?>public/img/6.gif" id="img"/>
+                                    </div>
+                                </form>
+
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+                <!-- /validation -->
+
+            </div>
+
+
+
+
+            <h3 style="position: absolute; right: 550px;">  <?php
+                if (isset($this->titulo)): echo $this->titulo;
+                endif;
+                ?> </h3>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <div id="conteudo">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div style="clear:both;"></div>
+
+
+
+
+
+
+
+
+
+
+

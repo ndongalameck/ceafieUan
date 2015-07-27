@@ -1,0 +1,69 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Matricula
+ *
+ * @ORM\Table(name="matricula", indexes={@ORM\Index(name="fk_matricula_aluno1_idx", columns={"aluno_id"}), @ORM\Index(name="fk_matricula_curso1_idx", columns={"curso_id"}), @ORM\Index(name="fk_matricula_modulo1_idx", columns={"modulo_id"})})
+ * @ORM\Entity
+ */
+class Matricula
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modulo_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $moduloId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="string", length=45, nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=45, nullable=false)
+     */
+    private $estado;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aluno_id", type="integer", nullable=false)
+     */
+    private $alunoId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="curso_id", type="integer", nullable=false)
+     */
+    private $cursoId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ano", type="string", length=40, nullable=false)
+     */
+    private $ano;
+
+
+}

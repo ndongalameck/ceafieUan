@@ -1,0 +1,60 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Usuario
+ *
+ * @ORM\Table(name="usuario", indexes={@ORM\Index(name="fk_usuario_pessoa1_idx", columns={"pessoa_id"})})
+ * @ORM\Entity
+ */
+class Usuario
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=45, nullable=false)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="senha", type="string", length=45, nullable=false)
+     */
+    private $senha;
+
+    /**
+     * @var simplearray
+     *
+     * @ORM\Column(name="nivel", type="simplearray", nullable=false)
+     */
+    private $nivel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pessoa_id", type="integer", nullable=false)
+     */
+    private $pessoaId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tema", type="string", length=10, nullable=true)
+     */
+    private $tema;
+
+
+}

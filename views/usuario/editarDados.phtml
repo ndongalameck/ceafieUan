@@ -1,0 +1,109 @@
+<?php echo $this->menu; ?>
+<?php
+
+function selected($value, $selected) {
+    return $value == $selected ? ' selected="selected"' : '';
+}
+?>
+<div class="span10 " id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right" style="padding: 10px; float: left; color: blue;">Dados do Usuario</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>usuario/editar" id="editar" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <legend>Dados do Usuario</legend>
+
+
+                            <div class="control-group">
+                                <label class="control-label">Login<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="login" data-required="1" class="span6 m-wrap" value="<?php echo $this->dados->getLogin(); ?>"/>
+                                </div>
+                            </div>
+
+
+
+                            <div class="control-group">
+                                <input type="checkbox" value="Activar" name="check" class="checkbox" id="checkbox" onclick="this.checked ? getElementById('senha').removeAttribute('readOnly') : getElementById('senha').setAttribute('readOnly', 'readOnly')"/>
+                                <label class="control-label">Senha<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="password" name="senha" data-required="1"  class="span6 m-wrap" readonly="true" id="senha"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Nivel<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" name="nivel">
+                                        <option value="administrador" <?php echo selected($this->dados->getNivel(), "administrador") ?> >administrador</option>
+                                        <option value="docente" <?php echo selected($this->dados->getNivel(), "docente") ?> >docente</option>
+                                        <option value="aluno" <?php echo selected($this->dados->getNivel(), "aluno") ?> >aluno</option>
+                                    </select>                                    
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <input name="enviar" type="hidden" value="1"/>
+                        <input name="id" type="hidden" value="<?php echo $this->dados->getId(); ?>"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="editar">Editar</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+
+                        <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+<!-- /block -->
+</div>
+<!-- /validation -->
+
+</div>
+</div>

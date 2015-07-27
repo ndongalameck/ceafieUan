@@ -1,0 +1,20 @@
+ 1 
+00:00:01,826 --> 00:00:05,436
+Hi, this is Bryan Hansen from Pluralsight.
+
+ 2 
+00:00:05,436 --> 00:00:10,566
+In this module, we're going to see how to create a basic Spring MVC application.
+
+ 3 
+00:00:10,566 --> 00:00:14,526
+We're going to see all the steps that are required then we're going to talk a little bit
+
+ 4 
+00:00:14,526 --> 00:00:17,576
+about the prerequisites that you'll need in order to get started
+
+ 5 
+00:00:17,576 --> 00:00:20,576
+and get our environment setup so that we can start developing using the Spring MVC framework.
+

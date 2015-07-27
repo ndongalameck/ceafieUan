@@ -1,0 +1,21 @@
+php_flag display_errors on
+
+deny from all
+RewriteEngine On
+#AuthType Basic
+#AuthName "Faça seu Login"
+#AuthUserFile /var/www/html/uan/upload/.htpasswd
+##AuthUserFile /var/www/html/uan/application/.htpasswd
+##AuthUserFile /var/www/html/uan/public/.htpasswd
+##AuthUserFile /var/www/html/uan/config/.htpasswd
+##AuthUserFile /var/www/html/uan/models/.htpasswd
+##AuthUserFile /var/www/html/uan/bin/.htpasswd
+##
+##AuthUserFile /var/www/html/uan/vendor/.htpasswd
+#Require valid-user
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+AddType application/x-httpd-php .php

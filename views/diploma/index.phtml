@@ -1,0 +1,55 @@
+<?php echo $this->menu; ?>
+<div id="content" style="margin-left: 15px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+      <div style="position:absolute;
+                 top: 250px;
+                 left: 600px;">
+          <input type="number" name="ano" id="ano" data-required="1"  placeholder="Ano" maxlength="4"class="span2 m-wrap" />
+
+                <select id="curso" >
+                    <option value="">- Curso -</option>
+
+                </select>
+
+              
+            </div>
+
+            <table  class="table table-striped table-bordered" id="tabela">   
+                <thead>
+                    <tr class="odd gradeA">
+
+                        <th>Nª BI</th> 
+                        <th>Nome</th>
+                        <th>CURSO</th>
+                        <th>Ano de Conclusão</th>
+                        <th>IMPRIMIR</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php if (isset($this->dados) && !empty($this->dados)): ?>
+                        <?php foreach ($this->dados as $dados): ?>
+                            <tr>
+                                <td><?php print $dados['bi']; ?></td>
+                                <td><?php print $dados['nome']; ?></td>
+                                <td><?php print $dados['n2']; ?></td>
+                                <td><?php print date("d/m/Y",  strtotime($dados['data'])); ?></td>
+                                <td><a target="__BLANK" href="<?php echo URL . "diploma" . DS1 . "gerar/" . $dados['aluno'].'/'.$dados['modulo']; ?>">DIPLOMA</a></td>
+                            </tr>
+
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+

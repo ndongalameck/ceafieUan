@@ -1,0 +1,97 @@
+
+
+<table  class="table table-striped table-bordered" id="tabela" >   
+    <thead>
+
+        <tr class="odd gradeA">
+
+            <th>Nª BI</th> 
+            <th>Nome</th>
+            <th>Ano de Matricula</th>
+            <th>ESTADO</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <?php if (isset($this->dados) && !empty($this->dados)): ?>
+            <?php foreach ($this->dados as $dados): ?>
+                <tr> 
+                    <td><?php print $dados['bi']; ?></td>
+                    <td><a href="#" onclick="modal(<?php echo $dados['aluno'];?>);"><?php print $dados['nome']; ?></a></td>
+                    <td><?php print date("Y", strtotime($dados['data'])); ?></td>
+                    <?php if (strcmp($dados['estado'], "ABERTO") == 0): ?>
+                        <td>
+                            <a href="#" rel="<?php echo URL . "matricula" . DS1 . "editar/" . $dados['aluno']; ?>" id="validar">CONFIRMAR</a>
+                        </td>
+
+                    <?php else: ?>
+                        <td>CONFIRMADO<a target="__BLANK" href="<?php echo URL . "matricula" . DS1 . "imprimir/" . $dados['id'] . '/' . $dados['data'] ?>">(Recibo)</a></td>
+                    <?php endif; ?>
+
+                </tr>
+
+                <?php
+            endforeach;
+            ?>
+
+
+            <?php
+        endif;
+        ?>
+
+    </tbody>
+</table>
+
+<!--
+<div class="bs-example">
+     Button HTML (to Trigger Modal) 
+
+     Modal HTML 
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Informação</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Modulos Matriculado:</h3>
+                    <div>
+                        <div id="info"></div>
+                    </div>                    
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" href="#">Matricular em novo curso</a>
+                    <a class="btn btn-default" data-dismiss="modal" href="<?php echo URL . "docente"; ?>" data-remote="<?php echo URL . "docente"; ?>" rel="0" id="fechar">Fechar</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<a id="t" href="#">sam</a>
+
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+

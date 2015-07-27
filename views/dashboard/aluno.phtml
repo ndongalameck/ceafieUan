@@ -1,0 +1,50 @@
+<?php use application\Session;?>
+<?php echo $this->menu; ?>
+
+
+<aside id="sidebar" class="column">
+    <hr/>
+
+    <h3>Nota</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a   href="<?php echo URL . "aluno" . DS1 . "nota/" . Session::get('id'); ?>" class="" rel="<?php echo URL . "aluno" . DS1 . "nota/" . Session::get('id'); ?>">Ver Nota</a></li>
+    </ul>
+
+    <h3>Matéria</h3>
+    <ul class="toggle">
+        <li class="icn_edit_article"><a href="<?php echo URL . "materia" . DS1 . "index/" ?>"  class=""rel="<?php echo URL . "materia" . DS1 . "index/" ?>">Ver</a></li>
+    </ul>
+
+    <h3>Matricula</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a   href="<?php echo URL . "aluno" . DS1 . "informacao/" . Session::get('id'); ?>" class="" rel="<?php echo URL . "aluno" . DS1 . "informacao/" . Session::get('id'); ?>">Ver Dados</a></li>
+    </ul>
+
+    <h3>Difinições</h3>
+    <ul class="toggle">
+        <li class="icn_security"><a href="<?php echo URL . "aluno" . DS1 . "editar/" . Session::get('id'); ?>" class="" rel="<?php echo URL . "aluno" . DS1 . "editar/" . Session::get('id'); ?>">Conta</a></li>
+        <li class="icn_jump_back"><a href="<?php echo URL . "login/logof"; ?>">Sair</a></li>
+    </ul>
+
+    <footer>
+        <hr />
+        <p><strong><?php echo SIGLA; ?></strong></p>
+        <p><strong><?php echo DESENVOLVEDOR; ?></strong></p>
+    </footer>
+</aside><!-- end of sidebar -->
+
+<section id="main" class="column">
+    <div class="spacer"></div>
+
+    <!--    <div class="alert alert-success text-center">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Seja BemVindo <?php ?></h4>
+            O Seu Login foi feito com sucesso
+        </div>-->
+
+    <div id="pageContent">
+        <div><img src="<?php print URL; ?>public/img/6.gif" class="img-responsive" style="margin-left: 450px;" id="imagem"/></div>
+
+    </div>
+</section>
+

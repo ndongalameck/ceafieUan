@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/uan/controllers/Login/Login.php</file>
+            <file>file:/var/www/html/uan/views/certificado/index.phtml</file>
+            <file>file:/var/www/html/uan/controllers/Certificado/Certificado.php</file>
+            <file>file:/var/www/html/uan/models/Nota.php</file>
+            <file>file:/var/www/html/uan/application/Certificado.php</file>
+            <file>file:/var/www/html/uan/application/LogUso.php</file>
+            <file>file:/var/www/html/uan/application/Log.php</file>
+            <file>file:/var/www/html/uan/application/Recibo.php</file>
+        </group>
+    </open-files>
+</project-private>

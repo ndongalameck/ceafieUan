@@ -1,0 +1,98 @@
+<?php echo $this->menu; ?>
+<?php
+
+function selected($value, $selected) {
+    return $value == $selected ? ' selected="selected"' : '';
+}
+?>
+<div class="span10" id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>modulo/editar" id="editar" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <legend>Dados do Modúlo</legend>
+                            <div class="control-group">
+                                <label class="control-label">Nome<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="nome" data-required="1" class="span6 m-wrap" value="<?php print $this->dados->getNome(); ?>"/>
+                                </div>
+                            </div>
+<!--                            <div class="control-group">
+                                <label class="control-label">Curso<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap" id="curso1" name="curso">
+                                        <option value="CAP" <?php echo selected($this->dados->getCurso()->getNome(), "CAP") ?> >CAP</option>
+                                        <option value="CEPAC" <?php echo selected($this->dados->getCurso()->getNome(), "CEPAC") ?>>CEPAC</option>
+                                        <option value="CEPID" <?php echo selected($this->dados->getCurso()->getNome(), "CEPID") ?>>CEPID</option>
+                                    </select>
+
+
+                                </div>
+                            </div>-->
+                        </fieldset>
+
+                        <input name="enviar" type="hidden" value="1"/>
+                        <input name="id" type="hidden" value="<?php print $this->dados->getId(); ?>"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="editar">Salvar Dados</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+                        </fieldset>
+                    </form>
+
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+<!-- /block -->
+</div>
+<!-- /validation -->
+
+</div>
+</div>

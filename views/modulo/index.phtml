@@ -1,0 +1,57 @@
+<?php echo $this->menu; ?>
+
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <h3></h3>
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "modulo" . DS1 . "adicionar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Adicionar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "modulo" . DS1 . "editar/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Editar</span></a></li>
+            <li class="active"><a href="<?php echo URL . "modulo" . DS1 . "remover/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Apagar</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+<div class="" id="content" style="margin-left: 15px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+
+
+            <table  class="table table-striped table-bordered" id="tabela">   
+                <thead>
+                    <tr class="odd gradeA">
+
+
+                        <th>Nome</th>
+                        <th>Curso</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php if (isset($this->dados) && !empty($this->dados)): ?>
+                        <?php foreach ($this->dados as $dados): ?>
+                            <tr>
+
+                                <td><?php print $dados->getNome(); ?></td>
+                                <td><?php print $dados->getCurso()->getNome(); ?></td>
+                            </tr>
+
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

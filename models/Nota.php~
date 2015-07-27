@@ -1,0 +1,53 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Nota
+ *
+ * @ORM\Table(name="nota", indexes={@ORM\Index(name="fk_nota_aluno1_idx", columns={"aluno_id"}), @ORM\Index(name="fk_nota_modulo1_idx", columns={"modulo_id"})})
+ * @ORM\Entity
+ */
+class Nota
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var simplearray
+     *
+     * @ORM\Column(name="nota", type="simplearray", nullable=true)
+     */
+    private $nota;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="string", length=45, nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aluno_id", type="integer", nullable=false)
+     */
+    private $alunoId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modulo_id", type="integer", nullable=false)
+     */
+    private $moduloId;
+
+
+}

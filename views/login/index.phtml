@@ -1,0 +1,28 @@
+<!---Formulario de Login Modal------>
+
+
+<div id="w">
+    <div id="content">
+
+        <h2 class="text-center text-success">
+            Sistema de Gestão e Informação dos Cursos do CEAFIE - UAN
+        </h2>
+        <img src="<?php //print URL  ?>public/img/5.jpg" class="img-responsive"/>
+        <img src="<?php //print URL  ?>public/img/2.png" class="img-responsive"/>
+
+        <center><a href="#loginmodal" class="flatbtn" id="modaltrigger">Faça Seu Login</a></center>
+    </div>
+</div>
+
+<div id="loginmodal" style="display:none;">
+    <h1>Login de Usuario</h1>
+    <form id="loginform" name="loginform" method="post" action="login">
+        <label for="usuario">Usuario:</label>
+        <input type="text"  placeholder="Sam" name="login" class="txtfield" tabindex="1" value="<?php if (isset($this->dados)) print $this->dados['nome']; ?>">
+        <input type="hidden" value="1" name="enviar"/>
+        <label for="senha">Senha:</label>
+        <input type="password"  name="senha" class="txtfield" tabindex="2" value="<?php if (isset($this->dados)) print $this->dados['senha']; ?>">
+
+        <div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="flatbtn-blu hidemodal" value="Log In" tabindex="3"></div>
+    </form>
+</div>

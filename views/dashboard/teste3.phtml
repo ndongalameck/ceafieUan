@@ -1,0 +1,118 @@
+<?php
+
+use application\Session;
+
+function selected($value, $selected) {
+    return $value == $selected ? ' selected="selected"' : '';
+}
+?>
+<div id="wrap">
+
+    <!-- Header
+    ================================================== -->
+    <div id="nav-bar" class="">
+        <div class="pull-left">
+            <div id="header-container">
+
+                <div class="dropdown">
+                    <a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#" style="color: white; margin-top: 20px;">
+                        <?php if (isset($this->titulo)): echo $this->titulo;
+                        endif;
+                        ?>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo URL . "curso" . DS1 . "index/" . Session::get('id'); ?>">Curso</a></li>
+                        <li><a href="<?php echo URL . "modulo" . DS1 . "index/" ?>">Modulo</a></li>
+                        <li><a href="<?php echo URL . "usuarios" . DS1 . "index/" ?>">Usuarios</a></li>
+                        <li><a href="<?php echo URL . "login/logof"; ?>">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div id="top-info" class="pull-right">
+                <!--                                <a id="settings" href="#" class="win-command pull-right">
+                                                    <span class="win-commandicon win-commandring icon-cog-3"></span>
+                                                </a>
+                                <a id="logged-user" href="#" class="win-command pull-right">-->
+                <span class="win-commandicon win-commandring icon-user"></span>
+                </a>
+                <div class="pull-left">
+                    <h3><?php echo application\Session::get('nome'); ?></h3>
+                    <a href="<?php echo URL . "login/logof"; ?>"><h4 class="text-warning pull-right">Sair</h4></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="metro panorama">
+        <div class="panorama-sections" style="margin-top: 20px;">
+
+
+
+
+
+            <div class="panorama-section">
+
+                <h2>Usuarios</h2>
+
+
+                <div class="tile-column-span-2">
+                    <a class="tile wide imagetext wideimage bg-color-blue" href="<?php echo URL . "usuario" . DS1 . "index/" ?>">
+                        <img src="<?php echo URL; ?>public/img/img3.png" alt="sam" style="width:200px;" />
+                        <div class="textover-wrapper bg-color-blueDark">
+                            <div class="text2">cadastrar, alterar, dEletar</div>
+                        </div>
+                    </a>
+
+                    <div class="panorama-section tile-span-4">
+                        <h2>Documentos</h2>
+
+
+                        <a class="tile wide imagetext bg-color-grayLight" href="<?php echo URL . "relatorio" . DS1 . "graficoGeral/" ?>">
+                            <div class="image-wrapper">
+                                <img src="<?php echo URL; ?>public/img/img4.png" alt="sam"  class="img-responsive img-rounded" />
+                            </div>
+                            <div class="column-text">
+                                <div class="text4">Imprima Relatorios</div>
+                            </div>
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div id="charms" class="win-ui-dark slide">
+
+                    <div id="theme-charms-section" class="charms-section">
+                        <div class="charms-header">
+                            <a href="#" class="close-charms win-backbutton"></a>
+                            <h2>Definições</h2>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <form action="dashboard/alteraTema" id="tema">
+                                    <label for="win-theme-select">Alterar Tema:</label>
+                                    <select id="win-theme-select" class="tema" name="tema">
+
+                                        <option value="default" <?php echo selected(Session::get('tema'), "default") ?> >Default</option>
+                                        <option value="metro" <?php echo selected(Session::get('tema'), "metro") ?> >Metro</option>
+                                    </select>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

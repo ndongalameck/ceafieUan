@@ -1,0 +1,131 @@
+<?php echo $this->menu; ?>
+
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <div class="navbar">
+        <h3></h3>
+        <h3></h3>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "relatorio" . DS1 . "index/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Por Matricula</span></a></li>
+            <li class="active"><a href="<?php echo URL . "relatorio" . DS1 . "aproveitamentoGrafico/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Por Aproveitamento</span></a></li>
+        </ul>
+    </div>
+
+
+</div>
+<div class="" id="content" style="margin-left: 100px;">
+    <section id="main" class="column">
+        <div class="spacer"></div>
+
+
+        <article class="module width_full">
+            <header><h3>Stats</h3></header>
+            <div class="module_content">
+                <article class="stats_graph">
+                    <canvas id="cvs" width="600" height="250">[No canvas support]</canvas>
+
+                </article>
+
+                <article class="stats_overview">
+                    <div class="overview_today">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cap) && !empty($this->cap)): printf("%.1f", $this->cap);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CAP</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cepac) && !empty($this->cepac)): printf("%.1f", $this->cepac);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CEPAC</p>
+                    </div>
+                    <div class="overview_previous">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cepid) && !empty($this->cepid)): printf("%.1f", $this->cepid);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CEPID</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->total) && !empty($this->total)): printf("%.1f", $this->total);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Total</p>
+                    </div>
+                    <p class="text-info">Tabela de Aderencia</p>
+
+
+                </article>
+                <div class="clear"></div>
+            </div>
+        </article><!-- end of stats article -->
+
+
+        <!--- Fim dos grafico 1!-->
+
+        <article class="module width_full">
+            <header><h3>Stats</h3></header>
+            <div class="module_content">
+                <article class="stats_graph">
+                    <canvas id="cvs1" width="600" height="250">[No canvas support]</canvas>
+
+                </article>
+
+                <article class="stats_overview">
+                    <div class="overview_today">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->excelente) && !empty($this->excelente)): printf("%.1f", $this->excelente);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Excelente</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->bom) && !empty($this->bom)): printf("%.1f", $this->bom);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Bom</p>
+                    </div>
+                    <div class="overview_previous">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->suficiente) && !empty($this->suficiente)): printf("%.1f", $this->suficiente);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Suficiente</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->total1) && !empty($this->total1)): printf("%.1f", $this->total1);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Total</p>
+                    </div>
+                    <p class="text-info">Tabela de Aproveitamento</p>
+
+
+                </article>
+                <div class="clear"></div>
+            </div>
+        </article><!-- end of stats article -->
+
+        <!--- Fim dos grafico 2!-->
+
+        <!--FIM DOS GRAFICOS-->
+
+    </section>
+</div>

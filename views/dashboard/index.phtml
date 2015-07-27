@@ -1,0 +1,214 @@
+
+<?php echo $this->menu; ?>
+<?php
+
+use application\Session;
+
+function selected($value, $selected) {
+    return $value == $selected ? ' selected="selected"' : '';
+}
+?>
+
+<aside id="sidebar" class="column">
+    <hr/>
+    <h3>Aluno</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a  href="<?php echo URL . "matricula" . DS1 . "index/" ?>" class="" rel="<?php echo URL . "matricula" . DS1 . "index/" ?>">Ver</a></li>
+        <li class="icn_new_article"><a  href="<?php echo URL . "matricula" . DS1 . "adicionar/" ?>" class="" rel="<?php echo URL . "matricula" . DS1 . "adicionar/" ?>">Novo</a></li>
+        <li class="icn_edit_article"><a href="<?php echo URL . "matricula" . DS1 . "editar/" ?>" class="" rel="<?php echo URL . "matricula" . DS1 . "editar/" ?>">Editar</a></li>
+        <li class="icn_jump_back"><a   href="<?php echo URL . "matricula" . DS1 . "remover/" ?>" class="" rel="<?php echo URL . "matricula" . DS1 . "remover/" ?>">Apagar</a></li>
+    </ul>
+    <h3>Docente</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a   href="<?php echo URL . "docente" . DS1 . "index/" ?>" class="click" rel="<?php echo URL . "docente" . DS1 . "index/" ?>">Ver</a></li>
+        <li class="icn_new_article"><a href="<?php echo URL . "docente" . DS1 . "adicionar/" ?>" class="click" rel="<?php echo URL . "docente" . DS1 . "adicionar/" ?>">Novo</a></li>
+        <li class="icn_edit_article"><a href="<?php echo URL . "docente" . DS1 . "editar/" ?>" class="click" rel="<?php echo URL . "docente" . DS1 . "editar/" ?>">Editar</a></li>
+        <li class="icn_jump_back"><a href="<?php echo URL . "docente" . DS1 . "remover/" ?>" class="click" rel="<?php echo URL . "docente" . DS1 . "remover/" ?>">Apagar</a></li>
+    </ul>
+    
+    <h3>Nota</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a   href="<?php echo URL . "nota" . DS1 . "listar/" ?>" class="" rel="">Ver Notas</a></li>
+
+        <li class="icn_categories"><a   href="<?php echo URL . "nota" . DS1 . "index/" ?>" class="" rel="">Lançar Nota</a></li>
+        <li class="icn_edit_article"><a href="<?php echo URL . "nota" . DS1 . "editar/" ?>"  class=""rel="">Editar</a></li>
+        <li class="icn_jump_back"><a href="<?php echo URL . "nota" . DS1 . "remover/" ?>" class=""rel="">Apagar</a></li>
+    </ul>
+
+    <h3>Programa</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a   href="<?php echo URL . "programa" . DS1 . "index/" ?>" class="click" rel="<?php echo URL . "programa" . DS1 . "index/" ?>">Ver</a></li>
+        <li class="icn_new_article"><a href="<?php echo URL . "programa" . DS1 . "adicionar/" ?>" class="click" rel="<?php echo URL . "programa" . DS1 . "adicionar/" ?>">Novo</a></li>
+        <li class="icn_edit_article"><a href="<?php echo URL . "programa" . DS1 . "editar/" ?>" class="click" rel="<?php echo URL . "programa" . DS1 . "editar/" ?>">Editar</a></li>
+        <li class="icn_jump_back"><a href="<?php echo URL . "programa" . DS1 . "remover/" ?>" class="click" rel="<?php echo URL . "programa" . DS1 . "remover/" ?>">Apagar</a></li>
+    </ul>
+
+</ul>
+
+<h3>Relatorio</h3>
+<ul class="toggle">
+    <li class="icn_categories"><a   href="<?php echo URL . "relatorio" . DS1 . "graficoGeral/" ?>" class="click" rel="<?php echo URL . "relatorio" . DS1 . "graficoGeral/" ?>">Grafico</a></li>
+    <li class="icn_categories"><a   href="<?php echo URL . "relatorio" . DS1 . "index/" ?>" class="click" rel="<?php echo URL . "relatorio" . DS1 . "index/" ?>">Por Matricula</a></li>
+    <li class="icn_categories"><a   href="<?php echo URL . "relatorio" . DS1 . "aproveitamentoGrafico/" ?>" class="click" rel="<?php echo URL . "relatorio" . DS1 . "aproveitamentoGrafico/" ?>">Por Aproveitamento</a></li>
+</ul>
+
+<h3>Diploma</h3>
+<ul class="toggle">
+    <li class="icn_categories"><a   href="<?php echo URL . "diploma" . DS1 . "index/" ?>" class="click" rel="<?php echo URL . "diploma" . DS1 . "index/" ?>">Ver</a></li>
+
+</ul>
+
+
+<h3>Admin</h3>
+<ul class="toggle">
+    <li class="icn_jump_back"><a href="<?php echo URL . "login/logof"; ?>">Sair</a></li>
+</ul>
+
+<form action="dashboard/alteraTema" id="tema">
+    <label for="win-theme-select">
+        <h3>Alterar Tema</h3>
+    </label>
+    
+    <select id="win-theme-select" class="tema" name="tema" style="width: 170px;">
+        <option value="default" <?php echo selected(Session::get('tema'), "default") ?> >Default</option>
+        <option value="metro" <?php echo selected(Session::get('tema'), "metro") ?> >Metro</option>
+    </select>
+</form>
+
+
+<footer>
+    <hr />
+    <p><strong><?php echo SIGLA; ?></strong></p>
+    <p><strong><?php echo DESENVOLVEDOR; ?></strong></p>
+</footer>
+</aside><!-- end of sidebar -->
+
+
+
+<!----Graficos---->
+<div id="esconder">
+<!--    <section id="main" class="column">
+        <div class="spacer"></div>
+
+
+        <article class="module width_full">
+            <header><h3>Stats</h3></header>
+            <div class="module_content">
+                <article class="stats_graph">
+                    <canvas id="cvs" width="600" height="250">[No canvas support]</canvas>
+
+                </article>
+
+                <article class="stats_overview">
+                    <div class="overview_today">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cap) && !empty($this->cap)): printf("%.1f", $this->cap);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CAP</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cepac) && !empty($this->cepac)): printf("%.1f", $this->cepac);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CEPAC</p>
+                    </div>
+                    <div class="overview_previous">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->cepid) && !empty($this->cepid)): printf("%.1f", $this->cepid);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">CEPID</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->total) && !empty($this->total)): printf("%.1f", $this->total);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Total</p>
+                    </div>
+                    <p class="text-info">Tabela de Aderencia</p>
+
+
+                </article>
+                <div class="clear"></div>
+            </div>
+        </article> end of stats article 
+
+
+        - Fim dos grafico 1!
+
+        <article class="module width_full">
+            <header><h3>Stats</h3></header>
+            <div class="module_content">
+                <article class="stats_graph">
+                    <canvas id="cvs1" width="600" height="250">[No canvas support]</canvas>
+
+                </article>
+
+                <article class="stats_overview">
+                    <div class="overview_today">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->excelente) && !empty($this->excelente)): printf("%.1f", $this->excelente);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Excelente</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->bom) && !empty($this->bom)): printf("%.1f", $this->bom);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Bom</p>
+                    </div>
+                    <div class="overview_previous">
+                        <p class="overview_day"></p>
+                        <p class="overview_count"><?php
+                            if (isset($this->suficiente) && !empty($this->suficiente)): printf("%.1f", $this->suficiente);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Suficiente</p>
+                        <p class="overview_count"><?php
+                            if (isset($this->total1) && !empty($this->total1)): printf("%.1f", $this->total1);
+                                echo "%";
+                            else: echo "0.0%";
+                            endif;
+                            ?></p>
+                        <p class="overview_type">Total</p>
+                    </div>
+                    <p class="text-info">Tabela de Aproveitamento</p>
+
+
+                </article>
+                <div class="clear"></div>
+            </div>
+        </article> end of stats article 
+
+        - Fim dos grafico 2!
+
+        FIM DOS GRAFICOS
+
+    </section>-->
+</div>
+
+<?php if (isset($this->saudacao) && !empty($this->saudacao)): endif; ?>
+
+
+
+<div id="pageContent">
+    <div><img src="<?php //print URL          ?>public/img/6.gif" class="img-responsive" style="margin-left: 450px;" id="imagem"/></div>
+
+</div>
+

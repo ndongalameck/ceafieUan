@@ -1,0 +1,49 @@
+
+Esta versão cabe em um DVD comum
+Totalmente remodelado shell DRP 14,0 seleciona e instala automaticamente os drivers necessários para seu computador. Esta versão tem muitos recursos novos e otimizados para o novo sistema operacional Windows 8.1. Em comparação com a versão anterior do DRP 14,0 nesta versão corrigida significativamente shell e completamente novos pacotes de drivers. Instalando os drivers fornecidos no shell apenas alguns cliques , e este processo pode ser totalmente automatizado. Agradecimentos mais frescos motorista - Pakam , este programa instala os drivers em praticamente qualquer computador , de qualquer idade . Atualizações de instalação de drivers e este programa pode ser implementado sem uma conexão à Internet diretamente do HDD / flash / DVD
+
+Incluído nos pacotes de drivers :
+DP_Biometric_14032.7z
+DP_Bluetooth_14032.7z
+DP_CardReader_14032.7z
+DP_Chipset_14032.7z
+DP_LAN_Intel_14025.7z
+DP_LAN_Others_14032.7z
+DP_LAN_Realtek_14025.7z
+DP_MassStorage_14032.7z
+DP_Misc_14032.7z
+DP_Modem_14032.7z
+DP_Monitor_14032.7z
+DP_Printer_14025.7z
+DP_Sound_ADI_14025.7z
+DP_Sound_CMedia_14025.7z
+DP_Sound_Conexant_14032.7z
+DP_Sound_Creative_14032.7z
+DP_Sound_IDT_14025.7z
+DP_Sound_Others_14025.7z
+DP_Sound_VIA_14025.7z
+DP_Sounds_HDMI_14025.7z
+DP_Sounds_Realtek_14032.7z
+DP_Telephone_14032.7z
+DP_Touchpad_Alps_14032.7z
+DP_Touchpad_Cypress_14025.7z
+DP_Touchpad_Elan_14032.7z
+DP_Touchpad_Others_14032.7z
+DP_Touchpad_Synaptics_14032.7z
+DP_TV_Aver_14025.7z
+DP_TV_Beholder_14025.7z
+DP_TV_DVB_14025.7z
+DP_TV_Others_14025.7z
+DP_Vendor_14032.7z
+DP_Video_AMD_14032.7z
+DP_Video_Intel_14025.7z
+DP_Video_nVIDIA_14025.7z
+DP_Video_Others_14032.7z
+DP_Video_Server_14025.7z
+DP_WebCam_14032.7z
+DP_WLAN_14032.7z
+DP_xUSB_14025.7z
+
+Idioma: Multilanguage
+Formato de arquivo: . iso
+OS : 32 bits + 64 bits

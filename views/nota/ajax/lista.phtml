@@ -1,0 +1,35 @@
+
+            <table  class="table table-striped table-bordered" id="tabela">   
+                <thead>
+
+                    <tr class="odd gradeA">
+
+                        <th>Nª BI</th> 
+                        <th>Nome</th>
+                        <th>Nota</th>
+                        <th>Curso</th>
+                        <th>Modúlo</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php if (isset($this->nota) && !empty($this->nota)): ?>
+                        <?php foreach ($this->nota as $dados): ?>
+                            <tr>
+                                <td><?php print $dados['bi']; ?></td>
+                                <td><?php print $dados['nome']; ?></td>
+                                <td><?php print $dados['nota']; ?></td>
+                                <td><?php print $dados['curso']; ?></td>
+                                <td><?php print $dados['modnome']; ?></td>
+                                <td><?php print date("Y", strtotime($dados['data'])); ?></td>
+                            </tr>
+
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
+
+                </tbody>
+            </table>

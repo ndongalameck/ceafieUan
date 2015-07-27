@@ -1,0 +1,74 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Aluno
+ *
+ * @ORM\Table(name="aluno", indexes={@ORM\Index(name="fk_aluno_pessoa_idx", columns={"pessoa_id"})})
+ * @ORM\Entity
+ */
+class Aluno
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="graduacao", type="string", length=45, nullable=false)
+     */
+    private $graduacao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="universidade", type="string", length=45, nullable=false)
+     */
+    private $universidade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="unidade_organica", type="string", length=45, nullable=false)
+     */
+    private $unidadeOrganica;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categoria_docente", type="string", length=45, nullable=false)
+     */
+    private $categoriaDocente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="funcao", type="string", length=45, nullable=false)
+     */
+    private $funcao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categoria_cientifica", type="string", length=45, nullable=false)
+     */
+    private $categoriaCientifica;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pessoa_id", type="integer", nullable=false)
+     */
+    private $pessoaId;
+
+
+}

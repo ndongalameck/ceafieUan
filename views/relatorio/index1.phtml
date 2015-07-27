@@ -1,0 +1,220 @@
+<?php echo $this->menu; ?>
+
+<div class="col-12 pull-left" style="position: absolute; top: -10px; left: 10px;">
+    <div class="navbar">
+        <h3></h3>
+        <h3></h3>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo URL . "relatorio" . DS1 . "graficoGeral/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Grafico</span></a></li>
+            <li class="active"><a href="<?php echo URL . "relatorio" . DS1 . "index/" ?>" class="btn btn-primary"><span style="font-size: 14px; color: #FFFFFF;">Por Matricula</span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="span10 " id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>relatorio/aproveitamentoGrafico" id="buscar" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <legend class="text-info text-center">Escolha uma das opções</legend>
+                            <div class="control-group">
+                                <label class="control-label">Opções<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select class="span6 m-wrap " id="opcao" name="opcao">
+                                        <option value="000">-Selecciona uma das opções-</option>
+                                        <option value="geral">relatorio geral de aproveitamento dos alunos</option>
+                                        <option value="CAP">relatorio geral de aproveitamento dos alunos no CAP</option>
+                                        <option value="CEPAC">relatorio geral de aproveitamento dos alunos no CEPAC</option>
+                                        <option value="CEPID">relatorio geral de aproveitamento dos alunos no CEPID</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <input name="enviar" type="hidden" value="1"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="buscar">Gerar</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+<br />
+
+<?php if (isset($this->dados) && !empty($this->dados)): ?>
+
+
+    <a  style="position: absolute; top: 400px;" href="<?php echo URL . 'relatorio/' . 'imprimirAproveitamento'; ?>" target="_BLANK"><h4><i class="icon icon-print"></i>Imprimir</h4></a>
+    <table class="table">
+        <caption class="text-center"><h4> ESTATÍSTICA GERAL<br /><br /> NUMERO TOTAL DE NOTAS POR GENERO EM 2015<br />
+
+            </h4>
+        </caption>
+
+        <tbody>
+
+
+
+            </tr>
+            <tr class="ro2"><td class="Default">
+                     </td>
+                <td rowspan="2" class="ce2"><strong>NOTAS </strong></td>
+                <td colspan="2" class="ce5"><strong>GENÉRO</strong></td>
+            </tr>
+            <tr class="ro2">
+                <td  class="Default"> 
+                </td>
+                <td class="ce5"><p>M</p></td><td style="text-align:left;width:2.258cm; " class="ce5"><p>F</p>
+                </td>
+                <td  class="ce5"><strong>TOTAL</strong>
+                </td>
+            </tr>
+            <tr >
+
+                <td> 
+                <td><strong>EXCELENTE</strong></td><td><p><?php echo $this->dados['excelente_h']; ?></p></td>
+                <td><p><?php echo $this->dados['excelente_m']; ?></p>
+                </td>
+                <td><p><?php echo $this->dados['total_ex']; ?></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td> 
+                </td>
+
+                <td><strong>SUFICIENTE</strong></td>
+                <td><p><?php echo $this->dados['suficiente_h']; ?></p>
+                </td>
+                <td><p><?php echo $this->dados['suficiente_m']; ?></p></td>
+                <td><p><?php echo $this->dados['total_suf']; ?></p>
+                </td>
+                <td> 
+                </td>
+            </tr>
+            <tr>
+                <td class="Default"> 
+                </td>
+
+
+                <td class="ce3"><strong>BOM </strong>
+                </td><td  class="ce3"><p><?php echo $this->dados['bom_m']; ?></p>
+                </td><td  class="ce3"><p><?php echo $this->dados['bom_h']; ?></p>
+                </td><td  class="ce5"><p><?php echo $this->dados['total_bom']; ?></p>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+<?php if (isset($this->aproveitamento) && !empty($this->aproveitamento)): ?>
+
+    <a  style="position: absolute; top: 400px;" href="<?php echo URL . 'relatorio/' . 'imprimirAproveitamentoPOrCurso/' . $this->aproveitamento['id']; ?>" target="_BLANK"><h4><i class="icon icon-print"></i>Imprimir</h4></a>
+    <table class="table table-striped table-bordered">
+        <caption class="text-center"><h4> Relatório Gerado pelo Sistema<br /><br /> NUMERO TOTAL DE NOTAS NO <?php echo $this->aproveitamento['id']; ?> EM 2015<br />
+
+            </h4>
+        </caption>
+
+        <tbody>
+
+
+
+            </tr>
+            <tr class="ro2"><td class="Default">
+                     </td>
+                <td rowspan="2"  class="ce2"><strong>NOTAS </strong></td>
+                <td colspan="2" class="ce5"><strong>GENÉRO</strong></td>
+            </tr>
+            <tr class="ro2">
+                <td  class="Default"> 
+                </td>
+                <td class="ce5"><p>M</p></td><td style="text-align:left;width:2.258cm; " class="ce5"><p>F</p>
+                </td>
+                <td class="ce5"><strong>TOTAL</strong>
+                </td>
+            </tr>
+            <tr>
+
+                <td> 
+                <td ><strong>EXCELENTE</strong></td><td><p><?php echo $this->aproveitamento['excelente_h_cap']; ?></p></td>
+                <td ><p><?php echo $this->aproveitamento['excelente_m_cap']; ?></p>
+                </td>
+                <td><p><?php echo $this->aproveitamento['total_ex']; ?></p>
+                </td>
+            </tr>
+
+            <tr >
+                <td  class="Default"> 
+                </td>
+
+                <td ><strong>SUFICIENTE</strong></td>
+                <td ><p><?php echo $this->aproveitamento['suficiente_h_cap']; ?></p>
+                </td>
+                <td ><p><?php echo $this->aproveitamento['suficiente_m_cap']; ?></p></td>
+                <td ><p><?php echo $this->aproveitamento['total_suf']; ?></p>
+                </td>
+                <td > 
+                </td>
+            </tr>
+            <tr >
+                <td class="Default"> 
+                </td>
+
+
+                <td ><strong>BOM </strong>
+                </td>
+                <td ><p><?php echo $this->aproveitamento['bom_h_cap']; ?></p>
+                </td>
+                <td ><p><?php echo $this->aproveitamento['bom_m_cap']; ?></p>
+                </td>
+                <td ><p><?php echo $this->aproveitamento['total_bom']; ?></p>
+                </td>
+
+
+            <tr >
+                <td  class="Default"> 
+                </td>
+
+                <td class="ce3"><strong>TOTAL </strong>
+                </td><td class="ce3"><p><?php echo $this->aproveitamento['total_h']; ?></p>
+                </td><td  class="ce3"><p><?php echo $this->aproveitamento['total_m']; ?></p>
+                </td><td  class="ce5"><p><?php echo $this->aproveitamento['total_geral']; ?></p>
+                </td>
+
+        </tbody>
+    </table>
+
+
+<?php endif; ?>

@@ -1,0 +1,57 @@
+<?php
+
+use application\Session; ?>
+
+<!-- Header -->
+<div class="error">
+    <div class="container">
+        <div class="header row">
+
+        </div>
+    </div>
+    <!-- Coming Soon -->
+    <div class="banner">
+        <div class="logo">
+            <div class="tilt pic"><img src="<?php print$_layoutParam['caminho_images']; ?>logo.png"  alt=""/></div>
+        </div>
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h2>Não tens permissão para acessar essa pagina!</h2>
+                        <div><h2><?php if (isset($this->mensagem_erro)) print $this->mensagem_erro; ?></h2>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="span12 subscribe">
+                        <h3>Contacte o Administrador&copysr;!</h3>
+                        <p><span class="line3"><a href="<?php print URL . 'login'; ?>">Ir Para Pagina de Login</a></span></p>
+                        <div class="success-message"></div>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="banner1">
+        <div class="container">
+            <div class="row">
+                <div class="span6 footer_menu">
+                    <ul class="footer_menu">
+                        <?php if (!Session::get("autenticado")): ?>
+                            <li>   <a href="<?php print URL . 'login'; ?>">Ir Para Pagina de Login</a></li>
+                        <?php endif; ?>    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

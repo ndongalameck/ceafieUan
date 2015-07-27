@@ -1,0 +1,83 @@
+<?php echo $this->menu; ?>
+<div class="span10 " id="content" style="margin-left: 150px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header" style="margin-top: 20px;">
+                <div class="muted pull-right" style="padding: 10px; color: blue; float: left;">Painel de Senha</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>aluno/alteraSenha" id="editar" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <legend>ALter Senha</legend>
+
+
+
+                            <div class="control-group">
+                                <input type="checkbox" value="Activar" name="check" class="checkbox" id="checkbox" onclick="this.checked ? getElementById('senha').removeAttribute('readOnly') : getElementById('senha').setAttribute('readOnly', 'readOnly')"/>
+                                <label class="control-label">Senha<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="password" name="senha" data-required="1"  class="span6 m-wrap" readonly="true" id="senha"/>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <input name="enviar" type="hidden" value="1"/>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="editar">Editar</button>
+                            <button type="reset" class="btn">Cancelar</button>
+                        </div>
+
+                        <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+<!-- END FORM-->
+</div>
+</div>
+</div>
+<!-- /block -->
+</div>
+<!-- /validation -->
+
+</div>
+</div>

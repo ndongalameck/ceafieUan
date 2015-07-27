@@ -1,0 +1,74 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Programa
+ *
+ * @ORM\Table(name="programa", indexes={@ORM\Index(name="fk_programa_modulo1_idx", columns={"modulo_id"}), @ORM\Index(name="fk_programa_docente1_idx", columns={"docente_id"}), @ORM\Index(name="fk_programa_curso1_idx", columns={"curso_id"})})
+ * @ORM\Entity
+ */
+class Programa
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="string", length=50, nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="local", type="string", length=45, nullable=true)
+     */
+    private $local;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modulo_id", type="integer", nullable=false)
+     */
+    private $moduloId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="docente_id", type="integer", nullable=false)
+     */
+    private $docenteId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="curso_id", type="integer", nullable=false)
+     */
+    private $cursoId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="hora", type="string", length=250, nullable=true)
+     */
+    private $hora;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datafinal", type="string", length=50, nullable=false)
+     */
+    private $datafinal;
+
+
+}
